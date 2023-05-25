@@ -1,11 +1,13 @@
 package com.darlanmarangoni.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.darlanmarangoni.R
 import com.darlanmarangoni.model.Produto
 import com.darlanmarangoni.ui.adapter.ListaProdutosAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.math.BigDecimal
 
 class MainActivity: AppCompatActivity(R.layout.activity_main) {
@@ -30,5 +32,10 @@ class MainActivity: AppCompatActivity(R.layout.activity_main) {
                 valor = BigDecimal("39.99")
             )
         ))
+        val fabAdd = findViewById<FloatingActionButton>(R.id.fab_add)
+        fabAdd.setOnClickListener {
+            val intent = Intent(this, FormularioProdutoActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
