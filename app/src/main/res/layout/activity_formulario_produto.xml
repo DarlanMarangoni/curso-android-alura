@@ -12,7 +12,7 @@
         tools:context=".ui.activity.FormularioProdutoActivity">
 
         <EditText
-            android:id="@+id/txt_nome"
+            android:id="@+id/activity_formulario_produto_nome"
             android:inputType="text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -28,9 +28,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Descrição"
-            app:layout_constraintEnd_toEndOf="@+id/txt_nome"
-            app:layout_constraintStart_toStartOf="@+id/txt_nome"
-            app:layout_constraintTop_toBottomOf="@+id/txt_nome"/>
+            app:layout_constraintEnd_toEndOf="@+id/activity_formulario_produto_nome"
+            app:layout_constraintStart_toStartOf="@+id/activity_formulario_produto_nome"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_produto_nome"/>
 
         <EditText
             android:id="@+id/activity_formulario_produto_valor"
