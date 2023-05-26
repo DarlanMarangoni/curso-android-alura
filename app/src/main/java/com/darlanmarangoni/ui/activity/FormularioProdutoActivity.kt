@@ -1,7 +1,6 @@
 package com.darlanmarangoni.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -15,26 +14,32 @@ class FormularioProdutoActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val botaoSalvar = findViewById<Button>(R.id.btn_salvar)
-        botaoSalvar.setOnClickListener {
-            val txtNome = findViewById<EditText>(R.id.txt_nome)
-            val nome = txtNome.text.toString()
-            val txtDescricao = findViewById<EditText>(R.id.txt_descricao)
-            val descricao = txtDescricao.text.toString()
-            val txtValor = findViewById<EditText>(R.id.txt_valor).text.toString()
-            val valor = if (txtValor.isBlank()) {
-                BigDecimal.ZERO
-            } else {
-                BigDecimal(txtValor)
-            }
+        configuraBotaoSalvar()
+    }
 
-            val produto = Produto(nome = nome, descricao = descricao, valor = valor)
-            Log.i("FormularioProduto", "onCreate: $produto")
-            val produtoDao = ProdutoDao()
+    private fun configuraBotaoSalvar() {
+        val botaoSalvar = findViewById<Button>(R.id.activity_formulario_produto_botao_salvar)
+        val produtoDao = ProdutoDao()
+        botaoSalvar.setOnClickListener {
+            val produto = criaProduto()
             produtoDao.adiciona(produto)
-            Log.i("FormularioProduto", "onCreate: ${produtoDao.buscaTodos()}")
             finish()
         }
+    }
+
+    private fun criaProduto(): Produto {
+        val txtNome = findViewById<EditText>(R.id.txt_nome)
+        val nome = txtNome.text.toString()
+        val txtDescricao = findViewById<EditText>(R.id.activity_formulario_produto_descricao)
+        val descricao = txtDescricao.text.toString()
+        val txtValor =
+            findViewById<EditText>(R.id.activity_formulario_produto_valor).text.toString()
+        val valor = if (txtValor.isBlank()) {
+            BigDecimal.ZERO
+        } else {
+            BigDecimal(txtValor)
+        }
+        return Produto(nome = nome, descricao = descricao, valor = valor)
     }
 
 }

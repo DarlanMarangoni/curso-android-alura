@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/txt_descricao"
+            android:id="@+id/activity_formulario_produto_descricao"
             android:inputType="text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,23 +33,23 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_nome"/>
 
         <EditText
-            android:id="@+id/txt_valor"
+            android:id="@+id/activity_formulario_produto_valor"
             android:inputType="numberDecimal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Valor"
-            app:layout_constraintEnd_toEndOf="@+id/txt_descricao"
-            app:layout_constraintStart_toStartOf="@+id/txt_descricao"
-            app:layout_constraintTop_toBottomOf="@+id/txt_descricao"/>
+            app:layout_constraintEnd_toEndOf="@+id/activity_formulario_produto_descricao"
+            app:layout_constraintStart_toStartOf="@+id/activity_formulario_produto_descricao"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_produto_descricao"/>
 
         <Button
-            android:id="@+id/btn_salvar"
+            android:id="@+id/activity_formulario_produto_botao_salvar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Salvar"
             android:layout_margin="16dp"
             app:layout_constraintVertical_bias="1"
-            app:layout_constraintTop_toBottomOf="@+id/txt_valor"
+            app:layout_constraintTop_toBottomOf="@+id/activity_formulario_produto_valor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
